@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第二種電気工事士 取得計画</title>
+<style>
+:root {
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --text: #1f2328;
+  --muted: #5d6470;
+  --border: #e2e0d8;
+  --accent: #c2410c;
+  --accent-soft: #fff1e8;
+  --ok: #15803d;
+  --warn-bg: #fff7d6;
+  --warn-border: #e6c34a;
+  --bar-1: #9ca3af;
+  --bar-2: #2563eb;
+  --bar-3: #7c3aed;
+  --bar-4: #c2410c;
+  --bar-5: #15803d;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15171a;
+    --surface: #1e2125;
+    --text: #e8e6e1;
+    --muted: #a0a6ae;
+    --border: #33373d;
+    --accent: #fb923c;
+    --accent-soft: #33241a;
+    --ok: #4ade80;
+    --warn-bg: #2f2a14;
+    --warn-border: #8a7424;
+    --bar-1: #6b7280;
+    --bar-2: #60a5fa;
+    --bar-3: #a78bfa;
+    --bar-4: #fb923c;
+    --bar-5: #4ade80;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15171a;
+  --surface: #1e2125;
+  --text: #e8e6e1;
+  --muted: #a0a6ae;
+  --border: #33373d;
+  --accent: #fb923c;
+  --accent-soft: #33241a;
+  --ok: #4ade80;
+  --warn-bg: #2f2a14;
+  --warn-border: #8a7424;
+  --bar-1: #6b7280;
+  --bar-2: #60a5fa;
+  --bar-3: #a78bfa;
+  --bar-4: #fb923c;
+  --bar-5: #4ade80;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+  line-height: 1.75;
+  font-size: 16px;
+}
+main { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+header { margin-bottom: 28px; }
+.eyebrow { color: var(--accent); font-weight: 700; font-size: 13px; letter-spacing: .08em; }
+h1 { font-size: clamp(26px, 5vw, 34px); line-height: 1.3; margin: 6px 0 10px; }
+.lead { color: var(--muted); margin: 0; }
+.goal {
+  margin-top: 18px; padding: 14px 18px; border-radius: 10px;
+  background: var(--accent-soft); border-left: 4px solid var(--accent);
+}
+.goal strong { color: var(--accent); }
+section {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 22px 20px; margin-bottom: 18px;
+}
+h2 { font-size: 20px; margin: 0 0 14px; display: flex; gap: 10px; align-items: baseline; }
+h2 .num { color: var(--accent); font-variant-numeric: tabular-nums; }
+h3 { font-size: 16px; margin: 20px 0 8px; }
+p { margin: 8px 0; }
+.table-wrap { overflow-x: auto; margin: 8px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: 13px; white-space: nowrap; }
+td.k { font-weight: 600; white-space: nowrap; }
+tr.total td { font-weight: 700; border-bottom: none; }
+.note {
+  background: var(--warn-bg); border: 1px solid var(--warn-border);
+  border-radius: 8px; padding: 10px 14px; margin: 12px 0; font-size: 15px;
+}
+.small { font-size: 14px; color: var(--muted); }
+
+/* timeline */
+.timeline { display: grid; grid-template-columns: 72px 1fr; gap: 6px 10px; align-items: center; margin-top: 6px; }
+.timeline .m { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.timeline .bar {
+  border-radius: 6px; padding: 5px 10px; font-size: 14px; color: #fff; font-weight: 600;
+  display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+}
+.timeline .bar .ev { font-weight: 700; background: rgba(0,0,0,.22); border-radius: 4px; padding: 0 6px; }
+.p0 { background: var(--bar-1); } .p1 { background: var(--bar-2); } .p2 { background: var(--bar-3); }
+.p3 { background: var(--bar-4); } .p4 { background: var(--bar-5); }
+:root[data-theme="dark"] .timeline .bar, :root:not([data-theme="light"]) .timeline .bar { color: #fff; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .timeline .bar { color: #111; }
+  :root:not([data-theme="light"]) .timeline .bar .ev { background: rgba(255,255,255,.35); }
+}
+:root[data-theme="dark"] .timeline .bar { color: #111; }
+:root[data-theme="dark"] .timeline .bar .ev { background: rgba(255,255,255,.35); }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-top: 14px; }
+.stat { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
+.stat .v { font-size: 22px; font-weight: 700; }
+.stat .l { font-size: 13px; color: var(--muted); }
+
+/* phases */
+.phase { border-top: 1px solid var(--border); padding-top: 14px; margin-top: 14px; }
+.phase:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+.phase-head { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.tag { font-size: 12px; font-weight: 700; color: #fff; border-radius: 999px; padding: 2px 10px; }
+.phase-head h3 { margin: 0; }
+.period { color: var(--muted); font-size: 14px; }
+ul.check { list-style: none; padding: 0; margin: 10px 0 6px; }
+ul.check li { margin: 4px 0; }
+ul.check label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+ul.check input { margin-top: 6px; width: 17px; height: 17px; accent-color: var(--accent); flex-shrink: 0; }
+ul.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+.target { font-size: 15px; color: var(--ok); font-weight: 600; }
+.progress { display: flex; align-items: center; gap: 12px; margin: 4px 0 6px; font-size: 14px; color: var(--muted); }
+.progress .track { flex: 1; height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.progress .fill { height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+
+ol.tips { padding-left: 1.3em; margin: 6px 0; }
+ol.tips li { margin: 6px 0; }
+a { color: var(--accent); word-break: break-all; }
+footer { color: var(--muted); font-size: 13px; text-align: center; margin-top: 24px; }
+@media print {
+  body { background: #fff; }
+  section { break-inside: avoid; border-color: #ccc; }
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="eyebrow">STUDY PLAN · 作成日 2026-10-18</div>
+  <h1>第二種電気工事士 取得計画</h1>
+  <p class="lead">完全な初心者からスタートして、約9か月で合格を目指すプランです。</p>
+  <div class="goal">目標:<strong>2027年度(令和9年度)上期で一発合格</strong> → 2027年8月頃に免状を申請</div>
+</header>
+
+<section>
+  <h2><span class="num">01</span>試験の概要</h2>
+  <div class="table-wrap"><table>
+    <tr><td class="k">実施機関</td><td>一般財団法人 電気技術者試験センター</td></tr>
+    <tr><td class="k">受験資格</td><td>なし(誰でも受験できる)</td></tr>
+    <tr><td class="k">試験回数</td><td>年2回(上期・下期)</td></tr>
+    <tr><td class="k">学科試験</td><td>四肢択一 50問・2時間。CBT方式(テストセンター)か筆記方式を選ぶ</td></tr>
+    <tr><td class="k">学科の合格基準</td><td>60点以上(30問正解)が目安</td></tr>
+    <tr><td class="k">技能試験</td><td>事前に公表される候補問題13問から1問が出題。40分で実際に配線作業をする</td></tr>
+    <tr><td class="k">技能の合格基準</td><td>「欠陥」が1つもないこと</td></tr>
+    <tr><td class="k">学科免除</td><td>学科に受かって技能に落ちた場合、<strong>次回1回に限り</strong>学科が免除</td></tr>
+    <tr><td class="k">受験手数料</td><td>約1万円(ネット申込の方が安い。最新の金額は公式で要確認)</td></tr>
+  </table></div>
+  <div class="stats">
+    <div class="stat"><div class="v">62.2%</div><div class="l">学科 合格率(令和8年度上期)</div></div>
+    <div class="stat"><div class="v">約72%</div><div class="l">技能 合格率(令和7年度上期)</div></div>
+    <div class="stat"><div class="v">78,290人</div><div class="l">学科 受験者数(令和8年度上期)</div></div>
+  </div>
+  <p class="small">参考: 令和7年度は学科が上期57.7%・下期55.4%、技能が上期72.0%・下期71.4%。</p>
+</section>
+
+<section>
+  <h2><span class="num">02</span>試験日程</h2>
+  <h3>参考:2026年度(令和8年度)の実績</h3>
+  <div class="table-wrap"><table>
+    <tr><th>期</th><th>学科 CBT</th><th>学科 筆記</th><th>技能</th></tr>
+    <tr><td class="k">上期</td><td>4/23〜6/7</td><td>5/24(日)</td><td>7/18(土)・7/19(日)</td></tr>
+    <tr><td class="k">下期</td><td>9/24〜11/8</td><td>10/25(日)</td><td>12/12(土)・12/13(日)</td></tr>
+  </table></div>
+  <div class="note">2026/10/18 の時点で、2026年度下期の申込はもう締め切られています。→ <strong>狙うのは 2027年度上期</strong>です。</div>
+
+  <h3>2027年度上期(予想。2026年度の実績から推測)</h3>
+  <div class="table-wrap"><table>
+    <tr><th>イベント</th><th>予想時期</th><th>メモ</th></tr>
+    <tr><td class="k">日程・候補問題13問の公表</td><td>2027年1〜2月頃</td><td>1月から公式サイトを毎週チェック</td></tr>
+    <tr><td class="k">受験申込</td><td>2027年2〜3月頃</td><td><strong>期間が短いので要注意!</strong>ネット申込がおすすめ</td></tr>
+    <tr><td class="k">学科 CBT</td><td>2027年4月下旬〜6月上旬</td><td>早めの日程(4月末〜5月上旬)を予約する</td></tr>
+    <tr><td class="k">学科 筆記</td><td>2027年5月下旬(日曜)</td><td>CBTを選ばない場合</td></tr>
+    <tr><td class="k">学科 合格発表</td><td>2027年6月中旬頃</td><td>自己採点で合格ラインなら、発表を待たずに技能の練習へ</td></tr>
+    <tr><td class="k">技能試験</td><td>2027年7月中旬(土日)</td><td>受験地ごとに、どちらかの日</td></tr>
+    <tr><td class="k">技能 合格発表</td><td>2027年8月中旬頃</td><td></td></tr>
+    <tr><td class="k">免状申請</td><td>合格後すぐ</td><td>住んでいる都道府県に申請(手数料 約5,000円)</td></tr>
+  </table></div>
+  <p class="small">⚠ 正式な日程は、電気技術者試験センターの「令和9年度 電気工事士試験の実施日程等のご案内」で必ず確認してください。</p>
+</section>
+
+<section>
+  <h2><span class="num">03</span>全体スケジュール(約9か月)</h2>
+  <div class="timeline">
+    <div class="m">2026/10</div><div class="bar p0">フェーズ0:準備</div>
+    <div class="m">11月</div><div class="bar p1">フェーズ1:基礎固め</div>
+    <div class="m">12月</div><div class="bar p1">フェーズ1:基礎固め</div>
+    <div class="m">2027/1</div><div class="bar p2">フェーズ2:学科の本番対策</div>
+    <div class="m">2月</div><div class="bar p2">フェーズ2 <span class="ev">★受験申込</span></div>
+    <div class="m">3月</div><div class="bar p2">フェーズ2+工具に慣れる</div>
+    <div class="m">4月</div><div class="bar p3">フェーズ3:学科の仕上げ</div>
+    <div class="m">5月</div><div class="bar p3">フェーズ3 <span class="ev">★学科試験</span></div>
+    <div class="m">6月</div><div class="bar p4">フェーズ4:技能対策</div>
+    <div class="m">7月</div><div class="bar p4">フェーズ4 <span class="ev">★技能試験</span></div>
+    <div class="m">8月</div><div class="bar p0">合格発表 → 免状申請</div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="v">100〜150h</div><div class="l">学科の勉強時間の目安</div></div>
+    <div class="stat"><div class="v">50〜80h</div><div class="l">技能の練習時間の目安</div></div>
+    <div class="stat"><div class="v">週6〜8h</div><div class="l">平日30分〜1時間+休日2〜3時間</div></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">04</span>フェーズ別の計画</h2>
+  <div class="progress"><span id="progress-label">0 / 0 完了</span><div class="track"><div class="fill" id="progress-fill"></div></div></div>
+  <p class="small">チェックを入れた項目は、このブラウザに保存されます。</p>
+
+  <div class="phase">
+    <div class="phase-head"><span class="tag p0">フェーズ0</span><h3>準備</h3><span class="period">10/18〜10/31</span></div>
+    <ul class="check">
+      <li><label><input type="checkbox" data-id="p0-1"><span>教材を買う(「2027年版」が出ていればそれを選ぶ)。図解の多い初心者向け学科テキスト1冊(例:「すい〜っと合格」「ぜんぶ絵で見て覚える」)と、10年分程度の過去問題集1冊</span></label></li>
+      <li><label><input type="checkbox" data-id="p0-2"><span>YouTubeの無料解説動画(ホーザンなど)を1本見て、全体像をつかむ</span></label></li>
+      <li><label><input type="checkbox" data-id="p0-3"><span>試験範囲をざっと眺める(内容は理解しなくてOK)</span></label></li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="tag p1">フェーズ1</span><h3>基礎固め</h3><span class="period">11月〜12月</span></div>
+    <p>点を取りやすい「暗記」分野から始めて、苦手意識をつけないようにします。</p>
+    <ul class="check">
+      <li><label><input type="checkbox" data-id="p1-1"><span><strong>器具・工具・材料の名前と写真</strong>(よく出るうえ、暗記で取れる)</span></label></li>
+      <li><label><input type="checkbox" data-id="p1-2"><span><strong>配線図の図記号</strong>(毎回たくさん出る。配点は最大級)</span></label></li>
+      <li><label><input type="checkbox" data-id="p1-3"><span>電気理論の超基本:オームの法則、電力 P=VI、直列・並列の合成抵抗</span></label></li>
+      <li><label><input type="checkbox" data-id="p1-4"><span>法令(電気工事士法・電気用品安全法など)の基本</span></label></li>
+    </ul>
+    <p class="target">目標:テキストを1周する(分からない計算問題は飛ばしてOK)</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="tag p2">フェーズ2</span><h3>学科の本番対策</h3><span class="period">1月〜3月</span></div>
+    <ul class="check">
+      <li><label><input type="checkbox" data-id="p2-1"><span>過去問を年度ごとに解き、間違えたところだけテキストに戻る</span></label></li>
+      <li><label><input type="checkbox" data-id="p2-2"><span>配線図問題(後半20問)を重点的にやる</span></label></li>
+      <li><label><input type="checkbox" data-id="p2-3"><span><strong>複線図</strong>の書き方を練習する(学科にも技能にも使う最重要スキル)</span></label></li>
+      <li><label><input type="checkbox" data-id="p2-4"><span>1月から公式サイトをチェックし、<strong>申込期間に入ったらすぐ申し込む</strong></span></label></li>
+      <li><label><input type="checkbox" data-id="p2-5"><span>候補問題13問が公表されたら目を通しておく</span></label></li>
+      <li><label><input type="checkbox" data-id="p2-6"><span>3月から工具セットを買い、週1回ケーブルの皮むき・輪作りに慣れる</span></label></li>
+    </ul>
+    <p class="target">目標:過去問で安定して70点以上(本番の余裕分を見込む)</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="tag p3">フェーズ3</span><h3>学科の仕上げ</h3><span class="period">4月〜5月</span></div>
+    <ul class="check">
+      <li><label><input type="checkbox" data-id="p3-1"><span>過去問を直近10年分×2周</span></label></li>
+      <li><label><input type="checkbox" data-id="p3-2"><span>計算問題は「捨てる問題」と「取る問題」を決める(計算が苦手でも合格できる)</span></label></li>
+      <li><label><input type="checkbox" data-id="p3-3"><span>CBTは<strong>早めの日程</strong>を予約する。受かれば技能の練習期間を長く取れる</span></label></li>
+      <li><label><input type="checkbox" data-id="p3-4"><span>学科を受験して自己採点する</span></label></li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="tag p4">フェーズ4</span><h3>技能対策</h3><span class="period">学科受験の直後〜7月</span></div>
+    <ul class="check">
+      <li><label><input type="checkbox" data-id="p4-1"><span><strong>練習用の材料セット</strong>を買う(候補問題13問を2回分練習できるセットがおすすめ)</span></label></li>
+      <li><label><input type="checkbox" data-id="p4-2"><span>基本作業:皮むき、輪作り、リングスリーブの圧着、差込形コネクタ、器具への結線</span></label></li>
+      <li><label><input type="checkbox" data-id="p4-3"><span>候補問題No.1〜13を1問ずつ、<strong>複線図 → 作業</strong>の流れで練習(1周目は時間無制限)</span></label></li>
+      <li><label><input type="checkbox" data-id="p4-4"><span>2周目は<strong>40分以内</strong>を意識する(30分で完成+見直し10分が目標)</span></label></li>
+      <li><label><input type="checkbox" data-id="p4-5"><span>公式の「欠陥の判断基準」を読み込み、自分の作品をセルフチェックする</span></label></li>
+      <li><label><input type="checkbox" data-id="p4-6"><span>試験前の1週間:苦手な問題をもう一度。ネジの締め忘れ、被覆の剥ぎすぎなどのケアレスミスを確認</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">05</span>週間スケジュール例(学科期間)</h2>
+  <div class="table-wrap"><table>
+    <tr><th>曜日</th><th>内容</th><th>時間</th></tr>
+    <tr><td class="k">月〜金</td><td>通勤時間などにテキスト・暗記(図記号・器具の写真)</td><td>30分〜1時間</td></tr>
+    <tr><td class="k">土</td><td>過去問1回分を解く+復習</td><td>2〜3時間</td></tr>
+    <tr><td class="k">日</td><td>苦手分野(計算・複線図)の練習</td><td>2時間</td></tr>
+  </table></div>
+  <p class="small">技能期間は、土日のどちらかで2〜3問をまとめて練習し、平日は複線図を1日1問書く。</p>
+</section>
+
+<section>
+  <h2><span class="num">06</span>費用の目安</h2>
+  <div class="table-wrap"><table>
+    <tr><th>項目</th><th>金額(目安)</th></tr>
+    <tr><td>受験手数料</td><td>約10,000円</td></tr>
+    <tr><td>学科テキスト+過去問題集</td><td>約4,000〜5,000円</td></tr>
+    <tr><td>技能の工具セット(VVFストリッパー・圧着ペンチなど)</td><td>約10,000〜15,000円</td></tr>
+    <tr><td>技能の練習材料セット(2回分)</td><td>約20,000〜30,000円</td></tr>
+    <tr><td>技能の参考書(候補問題の解説)</td><td>約2,500円</td></tr>
+    <tr><td>免状の交付手数料</td><td>約5,000円</td></tr>
+    <tr class="total"><td>合計</td><td>約5〜7万円</td></tr>
+  </table></div>
+  <p class="small">工具は試験本番でも使い、そのまま実務でも使えます。会社の資格手当・補助金や、自治体の講習(埼玉県・茨城県などの職業訓練校の準備講習)を使える場合もあります。</p>
+</section>
+
+<section>
+  <h2><span class="num">07</span>うまくいかなかったときの予備プラン</h2>
+  <div class="table-wrap"><table>
+    <tr><th>ケース</th><th>対応</th></tr>
+    <tr><td class="k">学科に不合格</td><td>2027年度下期(申込は6月頃、学科は9〜10月)に再挑戦</td></tr>
+    <tr><td class="k">学科は合格、技能に不合格</td><td>次回1回は学科免除 → 2027年度下期の技能(12月)で再挑戦</td></tr>
+    <tr><td class="k">申込期間を逃した</td><td>下期の申込(例年6月頃)を待つ。それまでに技能の練習を先に進める</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="num">08</span>合格のポイント(初心者向け)</h2>
+  <ol class="tips">
+    <li><strong>暗記分野(図記号・器具・法令)で点を稼ぐ。</strong>計算問題が全部できなくても合格できる。</li>
+    <li><strong>複線図</strong>は早めにマスターする。学科と技能の両方で使う。</li>
+    <li>技能は「きれいさ」より<strong>「欠陥ゼロ」</strong>が大事。時間内に完成させることを最優先にする。</li>
+    <li>申込期間を逃すのが一番もったいない。<strong>1月からカレンダーに通知を入れる。</strong></li>
+  </ol>
+</section>
+
+<section>
+  <h2><span class="num">09</span>参考にした情報</h2>
+  <ul class="small">
+    <li>電気技術者試験センター(公式):<a href="https://www.shiken.or.jp/">https://www.shiken.or.jp/</a></li>
+    <li>アガルート「試験日程」:<a href="https://www.agaroot.jp/2denki/column/exam-date/">agaroot.jp/2denki/column/exam-date/</a></li>
+    <li>ユーキャン 第二種電気工事士コラム:<a href="https://www.u-can.co.jp/%E7%AC%AC%E4%BA%8C%E7%A8%AE%E9%9B%BB%E6%B0%97%E5%B7%A5%E4%BA%8B%E5%A3%AB/column/column06.html">u-can.co.jp</a></li>
+    <li>TAC 合格発表・合格率:<a href="https://www.tac-school.co.jp/kouza_denkikoujisi/denkikoujisi_goukaku.html">tac-school.co.jp</a></li>
+    <li>パナソニック 電気工事士試験対策スケジュール2026:<a href="https://panasonic.co.jp/ew2/pewbct/blog/dnews/2026/06/schedule_denkitaisaku2026_ver3.pdf">panasonic.co.jp(PDF)</a></li>
+  </ul>
+</section>
+
+<footer>日程・金額は2026年10月時点の調査にもとづく予想です。必ず公式情報で確認してください。</footer>
+</main>
+<script>
+(function () {
+  var KEY = "denko2-plan-checks";
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
+  var boxes = document.querySelectorAll("ul.check input[type=checkbox]");
+  var fill = document.getElementById("progress-fill");
+  var label = document.getElementById("progress-label");
+  function update() {
+    var done = 0;
+    boxes.forEach(function (b) { if (b.checked) done++; });
+    label.textContent = done + " / " + boxes.length + " 完了";
+    fill.style.width = (boxes.length ? done / boxes.length * 100 : 0) + "%";
+  }
+  boxes.forEach(function (b) {
+    b.checked = !!state[b.dataset.id];
+    b.addEventListener("change", function () {
+      state[b.dataset.id] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+      update();
+    });
+  });
+  update();
+})();
+</script>
+</body>
+</html>
